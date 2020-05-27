@@ -1,5 +1,10 @@
 <template>
-  <div class="uk-child-width-1-2@m uk-grid-collapse" uk-grid uk-height-viewport>
+  <div
+    id="about"
+    class="uk-child-width-1-2@m uk-grid-collapse"
+    uk-grid
+    uk-height-viewport
+  >
     <div class="uk-cover-container">
       <img :src="require('@/assets/about.jpg')" alt="" uk-cover />
     </div>
@@ -11,23 +16,21 @@
         />
         <hr class="uk-width-xlarge@m uk-margin-medium" />
         <p class="uk-width-xlarge@m" v-text="description" />
-        <h4 v-text="'THE IMPORTANT ISSUES OUR NATION FACES'" />
-        <div
-          class="uk-grid-small uk-child-width-1-2 uk-width-xlarge@m"
-          uk-grid
-          uk-margin
-        >
+        <h4 v-text="'БИД ЗӨВХӨН ХАМТАРЧ БАЙЖ ШИЙДЭЖ ЧАДНА.'" />
+        <div class="uk-grid-small uk-child-width-1-2" uk-grid uk-margin>
           <div
             v-for="(item, i) in items"
             :key="i"
             class="uk-text-primary uk-text-uppercase uk-text-small"
           >
+            <i uk-icon="icon: check" class="uk-margin-small-right" />
             {{ item }}
           </div>
         </div>
-        <a
+        <nuxt-link
+          to="/about"
           class="uk-button uk-button-primary uk-margin-large-top"
-          v-text="'Learn More'"
+          v-text="'Цааш унших'"
         />
       </div>
     </div>
@@ -36,16 +39,16 @@
 <script>
 export default {
   data: () => ({
-    title: 'JOIN US, AND LET’S GET TO WORK',
+    title: 'БИД АЖИЛЛАСААР Л БАЙНА БИДЭНТЭЙ НЭГДЭЭРЭЙ',
     description:
-      'How can we get our country back on track? How to preserve our Constitution and get people value and honor it? All this core questions have been evolving in our minds for years. And now we have all the answers to them. Join us and change your future.',
+      'Яаж бид өрх бүрт өслтийг хүргэх вэ? Үндсэн хуулиа хэрхэн хамгаалж, ард түмэндээ үнэлэгдэж, хүндлэгдэх вэ? Энэ бүх үндсэн асуултууд бидний оюун санаанд олон жилийн туршид оршин тогтнож ирлээ. Одоо бидэнд тэдгээрт өгөх бүх хариулт байна. Бидэнтэй нэгдэж ирээдүйгээ өөрчил.',
     items: [
-      'ENTITLEMENT REFORM',
-      'CRIMINAL JUSTICE REFORM',
-      'FOREIGN POLICY',
-      'THE ECONOMY',
-      'EDUCATION',
-      'VETERAN HEALTHCARE'
+      'НЭГДСЭН ХЯНАЛТЫН ШИНЭЧЛЭЛТҮҮД',
+      'ХУУЛЬ ЭРХ ЗҮЙ',
+      'ГАДААД БОДЛОГО',
+      'ЭДИЙН ЗАСАГ',
+      'БОЛОВСРОЛ',
+      'ЭРҮҮЛ МЭНД'
     ]
   })
 }

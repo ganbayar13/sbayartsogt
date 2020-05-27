@@ -14,7 +14,14 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -41,7 +48,13 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    [
+      'nuxt-gmaps',
+      {
+        key: 'AIzaSyANm1eW37kuseMpx6145njthF7iNiZzzSc'
+      }
+    ]
   ],
   /*
    ** Axios module configuration
